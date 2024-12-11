@@ -1,6 +1,7 @@
 'use strict';
 
 const { exec: _exec } = require('child_process');
+const fs = require('fs/promises');
 const { resolve } = require('path');
 const { promisify } = require('util');
 
@@ -25,7 +26,25 @@ const SYSTEM_VOICE_IDENTIFIER = 'com.apple.Fred';
  */
 const PLUGIN_TRIPLET_IDENTIFIER = 'ausp atdg BOCU';
 
-const exec = promisify(_exec);
+/**
+ * Execute the "exec" method from the built-in `child_process` module. In the
+ * event of failure due to the absence of the specified current working
+ * directory, provide a meaningful error description.
+ */
+const exec = async (...args) => {
+  try {
+    return await promisify(_exec)(...args);
+  } catch (error) {
+    const cwd = args[1]?.cwd || process.cwd();
+    const cwdExists = !!(await fs.stat(cwd).catch(() => null));
+
+    if (error.code === 'ENOENT' && !cwdExists) {
+      throw new Error(`Cannot access directory: ${cwd}`, {cause: error});
+    }
+
+    throw error;
+  }
+};
 const enableKeyAutomationPrompt = `This tool can only be installed on systems which allow automated key pressing.
 Please allow the Terminal application to control your computer (the setting is
 controlled in System Settings > Privacy & Security > Accessibility).`;
