@@ -9,9 +9,9 @@ const {
   retryOnTimeout,
   runScript,
   APPLESCRIPT_TIMEOUT_ERROR,
-} = require('../../../shared/helpers/macos/applescript.js');
-const { parseCodePoints } = require('../../../shared/helpers/macos/parseCodePoints.js');
-const { keyCodeCommand } = require('../../../shared/helpers/macos/keyCodeCommand.js');
+} = require('../../../lib/helpers/macos/applescript.js');
+const { parseCodePoints } = require('../../../lib/helpers/macos/parseCodePoints.js');
+const { keyCodeCommand } = require('../../../lib/helpers/macos/keyCodeCommand.js');
 const IS_MACOS = require('os').platform() === 'darwin';
 
 suite('helpers/macos/applescript', () => {

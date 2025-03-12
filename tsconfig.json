@@ -5,5 +5,5 @@
         "noEmit": true,
         "target": "es2022"
     },
-    "include": ["shared", "test"]
+    "include": ["lib", "test"]
 }
