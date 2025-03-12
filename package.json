@@ -1,18 +1,25 @@
 {
-  "name": "@bocoup/at-driver-servers",
-  "version": "0.0.4",
-  "description": "A WebSocket server which allows clients to observe the text enunciated by a screen reader and to simulate user input ",
-  "private": true,
+  "name": "@bocoup/macos-at-driver-server",
+  "version": "0.0.8",
+  "description": "A WebSocket server which allows clients to observe the text enunciated by a screen reader and to simulate user input using macOS",
   "scripts": {
-    "prettier": "prettier --write shared test",
+    "prettier": "prettier --write lib test",
     "test": "npm run test-style && npm run test-types && npm run test-unit",
     "test-macos-key-press": "mocha --ui tdd test/test-macos-key-press.js",
-    "test-style": "prettier --check shared test",
+    "test-style": "prettier --check lib test",
     "test-types": "tsc -p tsconfig.json",
     "test-unit": "mocha --ui tdd test/test.js test/helpers/**/*.js"
   },
-  "author": "",
+  "author": "Bocoup",
   "license": "MIT",
+  "bin": {
+    "at-driver": "./lib/bin/at-driver"
+  },
+  "files": [
+    "MacOSATDriverServer/Build/debug",
+    "README.md",
+    "lib"
+  ],
   "devDependencies": {
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.11.17",
@@ -26,12 +33,11 @@
   },
   "dependencies": {
     "debug": "^4.3.4",
-    "robotjs": "^0.6.0",
     "uuid": "^9.0.1",
     "ws": "^8.2.3",
     "yargs": "^17.2.1"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }
