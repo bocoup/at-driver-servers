@@ -20,7 +20,7 @@ locally (that is, without publishing it for use by others).
 ### Instructions
 
 1. Build the Xcode project
-   1. Select `Open Existing Project...` from Xcode and navigate to `/packages/macos-at-driver-server/MacOSATDriverServer/MacOSATDriverServer.xcodeproj` in your local repository
+   1. Select `Open Existing Project...` from Xcode and navigate to `src/MacOSATDriverServer/MacOSATDriverServer.xcodeproj` in your local repository
    2. With the project open, select `Product>Build` from the top-level menu
 2. Execute the following command in a terminal:
 
@@ -41,7 +41,7 @@ Repository](https://npmjs.org).
 ### Instructions
 
 1. Build the Xcode project
-   1. Select `Open Existing Project...` from Xcode and navigate to `/packages/macos-at-driver-server/MacOSATDriverServer/MacOSATDriverServer.xcodeproj` in your local repository
+   1. Select `Open Existing Project...` from Xcode and navigate to `src/MacOSATDriverServer/MacOSATDriverServer.xcodeproj` in your local repository
    2. With the project open, select `Product>Build` from the top-level menu
 2. Execute the following command in a terminal:
 
