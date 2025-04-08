@@ -29,8 +29,8 @@ const assert = require('assert');
 
 const { Builder } = require('selenium-webdriver');
 
-const { renderScript, runScript } = require('../lib/helpers/macos/applescript');
-const { KeyCodeCommandKind } = require('../lib/helpers/macos/keyCodeCommand');
+const { renderScript, runScript } = require('../lib/helpers/applescript');
+const { KeyCodeCommandKind } = require('../lib/helpers/keyCodeCommand');
 
 // Allow for longer delays when starting the browsing session when executing
 // these tests in resource-constrained continuous-integration environments.

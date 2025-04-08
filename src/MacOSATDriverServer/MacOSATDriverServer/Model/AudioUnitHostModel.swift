@@ -34,7 +34,7 @@ class AudioUnitHostModel: ObservableObject {
     /// These values must be kept in-sync with other references in this
     /// project:
     ///
-    /// - lib/install/macos.js
+    /// - lib/installation.js
     /// - src/MacOSATDriverServer/MacOSATDriverServerExtension/Info.plist
     init(type: String = "ausp", subType: String = "atdg", manufacturer: String = "BOCU") {
         self.type = type
