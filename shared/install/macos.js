@@ -161,7 +161,10 @@ const isInstalled = async function () {
  */
 const getExecOptions = async function () {
   return {
-    cwd: resolve(__dirname, '../../MacOSATDriverServer/Build/Debug'),
+    cwd: resolve(
+      __dirname,
+      '../../packages/macos-at-driver-server/MacOSATDriverServer/Build/Debug',
+    ),
   };
 };
 
@@ -195,7 +198,7 @@ async function registerExtensions(options) {
  */
 async function unregisterExtensions(options) {
   debug('Unregistering trusted macOS extension');
-  await exec(`${LSREGISTER_EXECUTABLE_PATH} -f -R -trusted -u ${APPLICATION_NAME}`, options);
+  await exec(`${LSREGISTER_EXECUTABLE_PATH} -u ${APPLICATION_NAME}`, options);
 }
 
 async function enableExtension() {
