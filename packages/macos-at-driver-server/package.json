@@ -1,6 +1,6 @@
 {
   "name": "@bocoup/macos-at-driver-server",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "author": "Bocoup",
   "license": "MIT",
   "description": "A WebSocket server which allows clients to observe the text enunciated by a screen reader and to simulate user input using macOS",
